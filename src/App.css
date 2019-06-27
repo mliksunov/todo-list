@@ -42,11 +42,25 @@ html, body {
   transition: all .5s;
 }
 
+input {
+  border: none;
+  border-radius: 25px;
+  background: white;
+  padding: 0 10px;
+  box-shadow: 0 0 10px 1px #194d33;
+  margin-right: 15px;
+}
+
 button {
-  border: 2px solid darkgreen;
+  box-shadow: 0 0 10px 1px #194d33;
+  border: none;
   border-radius: 25px;
   background: white;
   cursor: pointer;
+}
+
+button:active {
+  box-shadow: none;
 }
 
 .site-sidebar.opened {
@@ -58,4 +72,15 @@ button {
   background: #d8f1e4;
   box-shadow: 0 0 10px 1px #194d33;
   padding: 25px;
+}
+
+form {
+  display: flex;
+}
+
+.item-name-holder {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
 }

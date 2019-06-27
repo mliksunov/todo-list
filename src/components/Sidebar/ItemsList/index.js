@@ -1,10 +1,14 @@
 import React from 'react';
 import { isEmpty } from 'lodash';
+import { AddItem } from "../AddItem";
 
 const Item = ({item, list}) => {
     return (
         <li>
-            { item.name }
+            <div className='item-name-holder'>
+                <span className='item-name'>{ item.name }</span>
+                <button type="submit">+</button>
+            </div>
             <ItemsList items={list} parentId={item.id} />
         </li>
     )
