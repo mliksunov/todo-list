@@ -49,6 +49,8 @@ input {
   padding: 0 10px;
   box-shadow: 0 0 10px 1px #194d33;
   margin-right: 15px;
+    width: 114px;
+    flex-grow: 1;
 }
 
 button {
@@ -76,6 +78,7 @@ button:active {
 
 form {
   display: flex;
+    flex-grow: 1;
 }
 
 .item-name-holder {
@@ -83,4 +86,12 @@ form {
   align-items: center;
   justify-content: space-between;
   margin-bottom: 10px;
+}
+
+.popup-holder {
+    display: flex;
+}
+
+.popup-holder > button {
+    margin-left: 20px;
 }

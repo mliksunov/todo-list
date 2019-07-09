@@ -1,29 +1,29 @@
 import React from 'react';
 import { isEmpty } from 'lodash';
-import { AddItem } from "../AddItem";
+import { noop } from 'lodash';
 
-const Item = ({item, list}) => {
+const Item = ({item, list, openPopup}) => {
     return (
         <li>
             <div className='item-name-holder'>
                 <span className='item-name'>{ item.name }</span>
-                <button type="submit">+</button>
+                <button data-id={item.id} onClick={openPopup} type="button">+</button>
             </div>
-            <ItemsList items={list} parentId={item.id} />
+            <ItemsList items={list} parentId={item.id} openPopup={openPopup} />
         </li>
     )
 };
 
-const ItemsList = ({items, parentId}) => {
-    console.log(parentId);
+const ItemsList = ({items, parentId, openPopup}) => {
 
     if (isEmpty(items)) {
         return null;
     }
+
     return (
         <ul className="items-list">
             { items.filter(el => el.parent === parentId).map(item => (
-                <Item key={item.id} item={item} list={items}/>
+                <Item key={item.id} item={item} list={items} openPopup={openPopup}/>
             )) }
         </ul>
     )
@@ -31,7 +31,8 @@ const ItemsList = ({items, parentId}) => {
 
 ItemsList.defaultProps = {
     items: [],
-    parentId: null
+    parentId: null,
+    addChildren: noop
 };
 
 export default ItemsList;
