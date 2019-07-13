@@ -1,9 +1,10 @@
 import React from 'react';
+import { MainContent } from '../../routes'
 
 function Main () {
     return (
         <main className='site-content'>
-            Main
+            <MainContent />
         </main>
     );
 }

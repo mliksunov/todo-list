@@ -17,7 +17,11 @@ class Sidebar extends Component {
                 {id: 4, name: 'Backbone', parent: 5},
                 {id: 5, name: 'Knockout', parent: 1}
             ]
-        }
+        };
+
+        this.addCategory = this.addCategory.bind(this);
+        this.openPopup = this.openPopup.bind(this);
+        this.closePopup = this.closePopup.bind(this);
     }
 
     addCategory (name, parent) {
@@ -63,9 +67,13 @@ class Sidebar extends Component {
     render() {
         return (
             <aside className={this.props.isOpened ? "site-sidebar opened" : "site-sidebar"}>
-                <AddItem addCategory={this.addCategory.bind(this)} />
-                <ItemsList items={this.state.categories} openPopup={this.openPopup.bind(this)} />
-                <AddPopup closePopup={this.closePopup.bind(this)} parent={this.state.parentToAdd} isVisible={this.state.isPopupVisible} addCategory={this.addCategory.bind(this)} />
+                <AddItem addCategory={this.addCategory} />
+                <ItemsList items={this.state.categories} openPopup={this.openPopup} />
+                <AddPopup closePopup={this.closePopup}
+                          parent={this.state.parentToAdd}
+                          isVisible={this.state.isPopupVisible}
+                          addCategory={this.addCategory}
+                />
             </aside>
         );
     }
