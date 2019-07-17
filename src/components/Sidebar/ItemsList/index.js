@@ -1,12 +1,14 @@
 import React from 'react';
-import { isEmpty } from 'lodash';
-import { noop } from 'lodash';
+import { Link } from "react-router-dom";
+import { isEmpty, noop } from 'lodash';
 
 const Item = ({item, list, openPopup}) => {
     return (
         <li>
             <div className='item-name-holder'>
-                <span className='item-name'>{ item.name }</span>
+                <Link to={`/category/${item.id}`}>
+                    <span className='item-name'>{ item.name }</span>
+                </Link>
                 <button data-id={item.id} onClick={openPopup} type="button">+</button>
             </div>
             <ItemsList items={list} parentId={item.id} openPopup={openPopup} />
