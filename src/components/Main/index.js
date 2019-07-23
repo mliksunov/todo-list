@@ -1,10 +1,10 @@
 import React from 'react';
 import { MainContent } from '../../routes'
 
-function Main () {
+function Main ({tasks}) {
     return (
         <main className='site-content'>
-            <MainContent />
+            <MainContent tasks={tasks} />
         </main>
     );
 }

@@ -10,7 +10,18 @@ class App extends Component {
         super(props);
 
         this.state = {
-            sidebarOpened: true
+            sidebarOpened: true,
+            tasks: [
+                {id: 1, name: 'Do something', parentCategory: 2, description: 'task 1 desription'},
+                {id: 2, name: 'Do something', parentCategory: 2, description: 'task 8 desription'},
+                {id: 3, name: 'Do something', parentCategory: 2, description: 'task 7 desription'},
+                {id: 4, name: 'Do something', parentCategory: 2, description: 'task 6 desription'},
+                {id: 5, name: 'Do something', parentCategory: 2, description: 'task 5 desription'},
+                {id: 6, name: 'Do something', parentCategory: 3, description: 'task 4 desription'},
+                {id: 7, name: 'Do something', parentCategory: 3, description: 'task 4 desription'},
+                {id: 8, name: 'Do something', parentCategory: 3, description: 'task 4 desription'},
+                {id: 9, name: 'Do something', parentCategory: 3, description: 'task 4 desription'}
+            ]
         }
     }
 
@@ -27,7 +38,7 @@ class App extends Component {
                 <Header toggleSidebar={this.toggleSidebar} isSidebarOpened={this.state.sidebarOpened} />
                 <div className="main">
                     <Sidebar isOpened={this.state.sidebarOpened} />
-                    <Main />
+                    <Main tasks={this.state.tasks} />
                 </div>
                 <Footer />
             </div>
