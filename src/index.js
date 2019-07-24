@@ -1,13 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import  { Provider } from 'react-redux';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter } from 'react-router-dom';
+import { appConnector } from "./connector";
+import { initStore } from "./store";
+
+const store = initStore();
+
+const MyApp = appConnector(App);
 
 ReactDOM.render(
     <BrowserRouter>
-        <App />
+        <Provider store={store}>
+            <MyApp />
+        </Provider>
     </BrowserRouter>,
     document.getElementById('root')
 );
