@@ -9,7 +9,6 @@ import { appConnector } from "./connector";
 import { initStore } from "./store";
 
 const store = initStore();
-
 const MyApp = appConnector(App);
 
 ReactDOM.render(
