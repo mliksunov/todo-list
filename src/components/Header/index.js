@@ -1,10 +1,17 @@
 import React from 'react';
 import logo from './logo.png'
+import {sidebarToggle} from "../../actions";
 
-function Header ({toggleSidebar, isSidebarOpened}) {
+const Header = props => {
+    const { common } = props;
+
+    const toggleSidebar = () => {
+        props.dispatch(sidebarToggle(!common.isSidebarOpened))
+    };
+
     return (
         <header className='site-header'>
-            <button onClick={toggleSidebar}>{isSidebarOpened ? '-' : '+'}</button>
+            <button onClick={toggleSidebar}>{common.isSidebarOpened ? '-' : '+'}</button>
             <img width='180' src={logo} alt="logo"/>
         </header>
     );

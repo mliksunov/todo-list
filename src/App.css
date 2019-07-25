@@ -49,6 +49,7 @@ input {
   padding: 0 10px;
   box-shadow: 0 0 10px 1px #194d33;
   margin-right: 15px;
+  height: 20px;
     width: 114px;
     flex-grow: 1;
 }
@@ -83,7 +84,7 @@ form {
 
 .item-name-holder {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: space-between;
   margin-bottom: 10px;
 }
@@ -94,4 +95,27 @@ form {
 
 .popup-holder > button {
     margin-left: 20px;
+}
+
+.site-sidebar > .items-list {
+  padding-left: 0;
+}
+
+.items-list {
+  padding-left: 15px;
+}
+
+.items-list a {
+  text-decoration: none;
+  color: #3f906c;
+  padding: 1px 0;
+}
+
+.items-list li {
+  list-style-type: none;
+}
+
+.items-list a:hover,
+.items-list a.active {
+  color: #d24545;
 }

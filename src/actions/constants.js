@@ -1,0 +1,3 @@
+export const SIDEBAR_TOGGLE = 'SIDEBAR_TOGGLE';
+export const CATEGORY_ADD = 'CATEGORY_ADD';
+export const POPUP_TOGGLE = 'POPUP_TOGGLE';

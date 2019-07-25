@@ -5,11 +5,11 @@ import  { Provider } from 'react-redux';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter } from 'react-router-dom';
-import { appConnector } from "./connector";
+import { commonConnector } from "./connectors/common";
 import { initStore } from "./store";
 
 const store = initStore();
-const MyApp = appConnector(App);
+const MyApp = commonConnector(App);
 
 ReactDOM.render(
     <BrowserRouter>

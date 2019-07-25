@@ -4,10 +4,14 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Tasks from './pages/Tasks';
 
-export const MainContent = ({tasks}) => (
+import { tasksConnector } from "./connectors/tasks";
+
+const TasksWithProps = tasksConnector(Tasks);
+
+export const MainContent = () => (
     <Switch>
         <Route path='/' exact component={Home} />
-        <Route path='/category/:id' component={ props => <Tasks {...props} tasks={tasks} /> } />
+        <Route path='/category/:id' component={TasksWithProps} />
         <Route path='/about' component={About} />
     </Switch>
 )
