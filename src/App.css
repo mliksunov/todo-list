@@ -49,17 +49,36 @@ input {
   padding: 0 10px;
   box-shadow: 0 0 10px 1px #194d33;
   margin-right: 15px;
-  height: 20px;
+  height: 25px;
     width: 114px;
     flex-grow: 1;
 }
 
-button {
+input:focus {
+  box-shadow: 0 0 1px 1px #194d33;
+  outline: 0;
+}
+
+.button {
   box-shadow: 0 0 10px 1px #194d33;
   border: none;
   border-radius: 25px;
   background: white;
   cursor: pointer;
+}
+
+.button.secondary {
+  padding: 5px 15px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+  background: #d8f1e4;
+  float: right;
+}
+
+.button.secondary:hover {
+  box-shadow: 0 0 1px 1px #194d33;
 }
 
 button:active {
@@ -118,4 +137,27 @@ form {
 .items-list a:hover,
 .items-list a.active {
   color: #d24545;
+}
+
+.site-content {
+  flex-grow: 1;
+}
+
+.site-content .task-item {
+  margin-bottom: 15px;
+}
+
+.site-content .task-item a {
+  display: block;
+  padding: 10px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px 1px #194d33;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: bold;
+  color: #000;
+}
+
+.site-content .task-item a:hover {
+  box-shadow: 0 0 1px 1px #194d33;
 }

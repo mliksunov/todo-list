@@ -5,7 +5,7 @@ const Task = props => {
     const {task, categoryId} = props;
 
     return (
-        <div>
+        <div className='task-item'>
             <Link to={`/category/${categoryId}/task/${task.id}`}>{task.name}</Link>
         </div>
     );

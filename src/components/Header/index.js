@@ -11,7 +11,7 @@ const Header = props => {
 
     return (
         <header className='site-header'>
-            <button onClick={toggleSidebar}>{common.isSidebarOpened ? '-' : '+'}</button>
+            <button className='button' onClick={toggleSidebar}>{common.isSidebarOpened ? '-' : '+'}</button>
             <img width='180' src={logo} alt="logo"/>
         </header>
     );

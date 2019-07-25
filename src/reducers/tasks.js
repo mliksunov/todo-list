@@ -16,8 +16,18 @@ export const tasks = (state = initialState, action ) => {
     const {type, payload} = action;
 
     switch (type) {
-        case 'USERNAME_CHANGE':
-            return {...state, name: payload};
+        case 'TASK_ADD':
+            return {
+                data: [
+                    ...state.data,
+                    payload
+                ]
+            };
+
+        case 'TASK_EDIT':
+            return {
+                data: payload
+            };
 
         default:
             return state;

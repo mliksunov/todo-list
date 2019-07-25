@@ -21,7 +21,7 @@ const Item = props => {
                 <NavLink to={`/category/${item.id}`}>
                     <span className='item-name'>{ item.name }</span>
                 </NavLink>
-                <button data-id={item.id} onClick={openPopup} type="button">+</button>
+                <button className='button' data-id={item.id} onClick={openPopup} type="button">+</button>
             </div>
             <ItemsList categories={categories} dispatch={dispatch} parentId={item.id} openPopup={openPopup} />
         </li>

@@ -19,7 +19,7 @@ const AddPopup = props => {
     return (
         <div className='popup-holder'>
             <AddItem addCategory={addCategory} parent={common.parentToAdd} />
-            <button onClick={closePopup}>x</button>
+            <button className='button' onClick={closePopup}>x</button>
         </div>
     );
 };

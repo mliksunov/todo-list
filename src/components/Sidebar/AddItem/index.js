@@ -16,7 +16,7 @@ export const AddItem = ({addCategory, addSubcategory, parent}) => {
     return (
         <form className='form' onSubmit={onSubmit}>
             <input type="text" ref={input} value={text} onChange={e => setText(e.target.value)}/>
-            <button type="submit" onClick={addSubcategory}>+</button>
+            <button className='button' type="submit" onClick={addSubcategory}>+</button>
         </form>
     );
 };
