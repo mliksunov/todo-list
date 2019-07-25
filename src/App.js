@@ -1,11 +1,11 @@
 import React from 'react';
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
-import Main from './components/Main';
 import Footer from './components/Footer';
 import './App.css';
 
 import { categoriesConnector } from "./connectors/categories";
+import {MainContent} from "./routes";
 
 const SidebarWithCategories = categoriesConnector(Sidebar);
 
@@ -15,7 +15,9 @@ const App = props => {
             <Header {...props} />
             <div className="main">
                 <SidebarWithCategories {...props} />
-                <Main />
+                <main className='site-content'>
+                    <MainContent />
+                </main>
             </div>
             <Footer />
         </div>

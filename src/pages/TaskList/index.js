@@ -1,7 +1,8 @@
 import React from 'react';
 import {get, isEmpty} from 'lodash';
+import Task from '../../components/Task';
 
-function Tasks (props) {
+const TasksList = props => {
     const id = +get(props, 'match.params.id', {});
     const tasks = props.tasks.filter(task => task.parentCategory === id);
 
@@ -13,9 +14,9 @@ function Tasks (props) {
 
     return (
         <div>
-            {tasks.map( task => <div key={task.id}>{task.description}</div>)}
+            {tasks.map( task => <Task key={task.id} task={task} categoryId={id} />)}
         </div>
     );
-}
+};
 
-export default Tasks;
+export default TasksList;
