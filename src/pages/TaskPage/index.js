@@ -1,10 +1,10 @@
 import React from 'react';
-import _ from 'lodash'
+import { find } from 'lodash'
 import {Link} from "react-router-dom";
 
 const TaskPage = props => {
     const {tasks, match, location} = props;
-    const task = _.find(tasks, t => t.id === +match.params.id);
+    const task = find(tasks, t => t.id === +match.params.id);
 
     return (
         <div>

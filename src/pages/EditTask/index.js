@@ -1,10 +1,10 @@
 import React, {useRef, useState} from 'react';
 import { editTask } from "../../actions";
-import _ from "lodash";
+import { find } from "lodash";
 
 const EditTask = props => {
     const {match, tasks, history} = props;
-    const initialTask = _.find(tasks, t => t.id === +match.params.id);
+    const initialTask = find(tasks, t => t.id === +match.params.id);
     const [text, setText] = useState(initialTask.name);
     const [description, setDescription] = useState(initialTask.description);
     const input = useRef(null);
